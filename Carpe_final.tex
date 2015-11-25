@@ -1,0 +1,95 @@
+% Copyright (C) 2015 Kevin W. Hamlen
+%
+% This program is free software; you can redistribute it and/or
+% modify it under the terms of the GNU General Public License
+% as published by the Free Software Foundation; either version 2
+% of the License, or (at your option) any later version.
+%
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+%
+% You should have received a copy of the GNU General Public License
+% along with this program; if not, write to the Free Software
+% Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+% MA  02110-1301, USA.
+%
+% The latest version of this program can be obtained from
+% http://songs.sourceforge.net.
+
+\documentclass[letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[utf8x]{inputenc}
+\usepackage[frenchb]{babel}
+\usepackage{frbib}
+\usepackage[bookmarks]{hyperref}
+\usepackage[lyric]{songs}
+\usepackage{perpage}
+
+\MakePerPage{footnote}
+
+\newcommand{\bis}[1]{#1 (bis)}
+\newcommand{\bisdeux}[2]{
+	\begin{tabular}{@{}l|l@{}}
+		#1 & \\
+		#2 & (bis) \\
+	\end{tabular}
+}
+\newcommand{\bistrois}[3]{
+	\begin{tabular}{@{}l|l@{}}
+		#1 & \\
+		#2 & \\
+		#3 & (bis) \\
+	\end{tabular}
+}
+\newcommand{\bisquatre}[4]{
+	\begin{tabular}{@{}l|l@{}}
+		#1 & \\
+		#2 & \\
+		#3 & \\
+		#4 & (bis) \\
+	\end{tabular}
+}
+
+\newcommand{\songtune}{}
+\newsongkey{tu}{\def\songtune{}}{\def\songtune{Air : #1\par}}
+
+\newcommand{\songtunes}{}
+\newsongkey{tus}{\def\songtunes{}}{\def\songtunes{Airs : #1\par}}
+
+\renewcommand{\extendprelude}{
+  \showrefs\showauthors
+  {\bfseries\songtune\songtunes}
+}
+
+\renewcommand{\chorusfont}{\it}
+
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{0in}
+\setlength{\topskip}{0in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\textheight}{9.1in}
+\settowidth{\versenumwidth}{1.\ }
+\pagestyle{empty}
+
+\songcolumns{0}
+\nosongnumbers
+\noversenumbers
+\setlength{\cbarwidth}{0pt}
+
+\newindex{songtitles}{filesongtitles}
+
+\begin{document}
+
+\include{Carpe_carmina_cerclis}
+\include{Carpe_carmina_gallicae_et_latinae}
+\include{Carpe_carmina_addendum}
+
+\showindex{Carmina tabla}{songtitles}
+
+\end{document}

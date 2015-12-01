@@ -1,3 +1,11 @@
 /.settings
 /.project
 /.texlipse
+/*.log
+/*.aux
+/*.out
+/*.sxc
+/*.gz
+/*.toc
+/*.sbx
+/*.sxd

@@ -30,28 +30,44 @@
 
 \MakePerPage{footnote}
 
-\newcommand{\bis}[1]{#1 (bis)}
-\newcommand{\bisdeux}[2]{
+\newcommand{\repun}[2]{#2 (#1)}
+\newcommand{\repdeux}[3]{
 	\begin{tabular}{@{}l|l@{}}
-		#1 & \\
-		#2 & (bis) \\
-	\end{tabular}
-}
-\newcommand{\bistrois}[3]{
-	\begin{tabular}{@{}l|l@{}}
-		#1 & \\
 		#2 & \\
-		#3 & (bis) \\
+		#3 & (#1) \\
 	\end{tabular}
 }
-\newcommand{\bisquatre}[4]{
+\newcommand{\reptrois}[4]{
 	\begin{tabular}{@{}l|l@{}}
-		#1 & \\
 		#2 & \\
 		#3 & \\
-		#4 & (bis) \\
+		#4 & (#1) \\
 	\end{tabular}
 }
+\newcommand{\repquatre}[5]{
+	\begin{tabular}{@{}l|l@{}}
+		#2 & \\
+		#3 & \\
+		#4 & \\
+		#5 & (#1) \\
+	\end{tabular}
+}
+
+\newcommand{\bis}[1]{\repun{bis}{#1}}
+\newcommand{\ter}[1]{\repun{ter}{#1}}
+\newcommand{\quater}[1]{\repun{quater}{#1}}
+
+\newcommand{\bisdeux}[2]{\repdeux{bis}{#1}{#2}}
+\newcommand{\terdeux}[2]{\repdeux{ter}{#1}{#2}}
+\newcommand{\quaterdeux}[2]{\repdeux{quater}{#1}{#2}}
+
+\newcommand{\bistrois}[3]{\reptrois{bis}{#1}{#2}{#3}}
+\newcommand{\tertrois}[3]{\reptrois{ter}{#1}{#2}{#3}}
+\newcommand{\quatertrois}[3]{\reptrois{quater}{#1}{#2}{#3}}
+
+\newcommand{\bisquatre}[4]{\repquatre{bis}{#1}{#2}{#3}{#4}}
+\newcommand{\terquatre}[4]{\repquatre{ter}{#1}{#2}{#3}{#4}}
+\newcommand{\quaterquatre}[4]{\repquatre{quater}{#1}{#2}{#3}{#4}}
 
 \newcommand{\songtune}{}
 \newsongkey{tu}{\def\songtune{}}{\def\songtune{Air : #1\par}}
@@ -86,9 +102,12 @@
 
 \begin{document}
 
-\include{Carpe_carmina_cerclis}
-\include{Carpe_carmina_gallicae_et_latinae}
-\include{Carpe_carmina_addendum}
+\include{Carpe_carmina_cerclis} %15
+\include{Carpe_carmina_gallicae_et_latinae} %55
+\include{Carpe_carmina_festivalis} %313
+%\include{Carpe_carmina_insolitis} %365
+%\include{Carpe_carmina_non_gallicae} %389
+\include{Carpe_carmina_addendum} %485
 
 \showindex{Carmina tabla}{songtitles}
 
